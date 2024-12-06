@@ -1,7 +1,6 @@
-package Office;
+package office.service;
 
 import office.Department;
-import office.Option;
 import office.Service;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,11 +10,10 @@ import java.sql.*;
 import static office.Config.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class DeleteDepartment {
-
+public class RemoveDepartmentTest {
     @Test
     @DisplayName("Проверка удаления сотрудников при удалении отдела")
-    public void deleteDepartment() {
+    public void removeDepartmentTest() {
         try(Connection con = DriverManager.getConnection(PG_BASE_URL, PG_BASE_USER, PG_BASE_PASSWORD)){
             Statement stm = con.createStatement();
             ResultSet rs = stm.executeQuery("Select ID, NAME from Department");
